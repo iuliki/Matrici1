@@ -78,36 +78,31 @@ namespace Matrici1
         }
         public static void Identice(int[,] matrix)
         { 
-            int ok = 0;//nu este identica
+            int ok1 = 0;//nu este identica
+            int ok2 = 0;
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
-                    if (row != col)
-                    {
-                        if (matrix[row, col] == 0)
-                            ok = 1;
-                    }
-                    else
-                        if (row == col)
-                    {
-                        if (matrix[row, col] != 1)
-                            ok = 0;
-                    }
+                    if (row == col && matrix[row, col] == 1)
+                        ok1 = 1;
+
+                    if (row != col && matrix[row, col] == 0)
+                        ok2 = 1;
+
+
+
 
 
                 }
-               
-
-               
 
                 Console.WriteLine();
                // return ok ;
             }
-            if (ok == 0)
-                Console.WriteLine("matricea nu este identica");
+            if (ok2==1 && ok1==1)
+                Console.WriteLine("matricea  este identica");
             else
-                Console.WriteLine("matricea este identica");
+                Console.WriteLine("matricea nu  este identica");
         }
     }
 }
