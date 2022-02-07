@@ -12,31 +12,7 @@ namespace Matrici1
             Identice(matrix1);
 
         }
-        public static class ConsoleHelper
-        {
-            public static int ReadNumber(string label, int maxTries, int defaultValue)
-            {
-                int currentTry = 0;
-                do
-                {
-                    Console.Write(label);
-                    string valueAsString = Console.ReadLine();
-                    int valueAsNumber;
-                    bool isNumber = int.TryParse(valueAsString, out valueAsNumber);
-
-                    if (isNumber)
-                    {
-                        return valueAsNumber;
-                    }
-
-                    currentTry++;
-                    Console.WriteLine($"The value '{valueAsString}' doen't represent a valid number, please try again ...");
-                }
-                while (currentTry < maxTries);
-
-                return defaultValue;
-            }
-        }
+        
         public static int[,] ReadMatrix()
         {
             // citesc nr de linii
